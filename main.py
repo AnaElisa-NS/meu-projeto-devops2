@@ -1,4 +1,4 @@
 def mensagem():
-    print("Olá, Mundo!")
+    print("Olá")
 
 mensagem()

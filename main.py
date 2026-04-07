@@ -1,4 +1,5 @@
-def mensagem():
-    print("Olá")
+def mensagem(nome):
+    print(f"Olá, {nome}!")
 
-mensagem()
+nome = input("Digite seu nome: ")
+mensagem(nome)

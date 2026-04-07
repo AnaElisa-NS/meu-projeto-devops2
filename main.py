@@ -6,3 +6,4 @@ def despedida(nome):
 
 nome = input("Digite seu nome: ")
 mensagem(nome)
+despedida(nome)

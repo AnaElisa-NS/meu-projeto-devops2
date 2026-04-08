@@ -4,6 +4,7 @@ def mensagem(nome):
 def despedida(nome):
     print(f"Até mais, {nome}!")
 
-nome = input("Digite seu nome: ")
-mensagem(nome)
-despedida(nome)
+if __name__ == "__main__":
+    nome = "Usuário"
+    mensagem(nome)
+    despedida(nome)

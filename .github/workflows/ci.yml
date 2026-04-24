@@ -21,3 +21,13 @@ jobs:
 
     - name: Rodar script
       run: python main.py
+
+    - name: Notificar Microsoft Teams
+      if: always()
+      run: |
+        curl -H "Content-Type: application/json" \
+        -d '{
+              "text": "🚀 Novo evento no GitHub!\nRepositório: ${{ github.repository }}\nBranch: ${{ github.ref }}\nStatus: ${{ job.status }}"
+            }' \
+        ${{ secrets.TEAMS_WEBHOOK_URL }}
+      

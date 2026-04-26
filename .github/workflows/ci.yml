@@ -24,7 +24,7 @@ jobs:
         pip install pytest
 
     - name: Rodar testes
-      run: pytest
+      run: PYTHONPATH=. pytest
 
     - name: Notificar no Teams
       if: always()

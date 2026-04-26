@@ -19,8 +19,12 @@ jobs:
       with:
         python-version: '3.11'
 
-    - name: Rodar script
-      run: python main.py
+    - name: Instalar dependências
+      run: |
+        pip install pytest
+
+    - name: Rodar testes
+      run: pytest
 
     - name: Notificar no Teams
       if: always()
@@ -32,7 +36,6 @@ jobs:
           "summary": "GitHub Actions",
           "themeColor": "0076D7",
           "title": "🚀 Pipeline executado!",
-          "text": "Repositório: meu-projeto-devops2\nStatus: Concluído com sucesso ✅"
+          "text": "Repositório: ${{ github.repository }}\nBranch: ${{ github.ref }}\nStatus: ${{ job.status }}"
         }' \
-        "https://default8a1ef6c383244103bf4a1328c5dc36.53.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/5ca2963e6bee4d50bb8a9ce7a3ecc18f/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=HWaAuLnatUfNyItKPn3VAsnMradpCnboFHdUCN3xHKk"
-          
+        ${{ secrets.TEAMS_WEBHOOK_URL }}

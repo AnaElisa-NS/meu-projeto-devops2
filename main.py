@@ -1,10 +1,10 @@
 def mensagem(nome):
-    print(f"Olá, {nome}! Seja bem-vindo ao sistema.")
+    return f"Olá, {nome}! Seja bem-vindo ao sistema."
 
 def despedida(nome):
-    print(f"Até mais, {nome}!")
+    return f"Até mais, {nome}!"
 
 if __name__ == "__main__":
     nome = "Usuário"
-    mensagem(nome)
-    despedida(nome)
+    print(mensagem(nome))
+    print(despedida(nome))
